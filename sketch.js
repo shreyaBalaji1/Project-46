@@ -1,25 +1,38 @@
 var Player, Player2, PlayerImg, Player2Img;
 var Infector;
+var bground, backgroundImg;
+var wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9, wall10, wall12, wall13, wall14, wall15, wall16, wall17, wall18, wall19, wall20;
 
 function preload() {
   PlayerImg = loadImage("boy.png");
   //Player2Img = loadImage("girl.png");
+  backgroundImg = loadImage("backg.jpg");
 }
 
 function setup() {
   createCanvas(1250,600);
+
+  bground = createSprite(580, height/2, 50, 50);
+  bground.addImage(backgroundImg);
+  bground.scale = 1.17;
+
   Player = createSprite(50, 200, 50, 50);
   Player.addImage(PlayerImg);
-  Player.scale = 0.2
+  Player.scale = 0.16;
 
+  /*wall1 = createSprite(55, 80, 3, 70);
+  wall2 = createSprite(5, 120, 3, 70);
+  wall3 = createSprite(0, 50, 70, 3);
+  wall4 = createSprite(-65, 80, 3, 70);
+  */
 
-  Infector = createSprite(400, 200, 50, 50);
+  //Infector = createSprite(400, 200, 50, 50);
   //Infector.addImage(InfectorImg);
-  Infector.scale = 0.2
+  //Infector.scale = 0.2
 }
 
 function draw() {
-  background(0);  
+  background(255);  
 
   /*** CONTROLS - PLAYER 1  - ARROW KEYS*/
   if(keyDown(RIGHT_ARROW)) {
@@ -53,6 +66,11 @@ function draw() {
   }
   */
 
+  //strokeweight(7);
+
+  /*for(var i = 75; i<3; i++) {
+    line();
+  }*/
 
   drawSprites();
 }
